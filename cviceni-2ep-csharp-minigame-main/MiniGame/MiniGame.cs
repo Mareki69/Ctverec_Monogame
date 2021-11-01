@@ -46,9 +46,9 @@ namespace MiniGame
             _ctverecek2 = new Ctverecek(
                 50, 5,
                 new Vector2((700), (_vyskaOkna - 50) / 2),
-                new SmeroveOvladani(Keys.Left, Keys.Right, Keys.Up, Keys.Down),
+                new SmeroveOvladani(Keys.Right, Keys.Left, Keys.Up, Keys.Down),
                 new Rectangle(0, 0, _sirkaOkna, _vyskaOkna),
-                Color.Black, GraphicsDevice);
+                Color.Gray, GraphicsDevice);
         }
 
         protected override void Update(GameTime gameTime)
