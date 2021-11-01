@@ -13,6 +13,7 @@ namespace MiniGame
         private int _vyskaOkna = 600;
 
         private Ctverecek _ctverecek;
+        private Ctverecek _ctverecek2;
 
         public MiniGame()
         {
@@ -42,6 +43,12 @@ namespace MiniGame
                 new Rectangle(0, 0, _sirkaOkna, _vyskaOkna),
                 Color.Black, GraphicsDevice
             );
+            _ctverecek2 = new Ctverecek(
+                50, 5,
+                new Vector2((700), (_vyskaOkna - 50) / 2),
+                new SmeroveOvladani(Keys.Left, Keys.Right, Keys.Up, Keys.Down),
+                new Rectangle(0, 0, _sirkaOkna, _vyskaOkna),
+                Color.Black, GraphicsDevice);
         }
 
         protected override void Update(GameTime gameTime)
@@ -52,6 +59,7 @@ namespace MiniGame
                 Exit();
 
             _ctverecek.Aktualizovat(klavesnice);
+            _ctverecek2.Aktualizovat(klavesnice);
 
             base.Update(gameTime);
         }
@@ -62,6 +70,7 @@ namespace MiniGame
 
             _spriteBatch.Begin();
             _ctverecek.Vykreslit(_spriteBatch);
+            _ctverecek2.Vykreslit(_spriteBatch);
             _spriteBatch.End();
 
             base.Draw(gameTime);
